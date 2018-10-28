@@ -54,8 +54,9 @@ public class AuthorizationServerConfigAdapter extends AuthorizationServerConfigu
                 .secret("zph-cloud")
                 .autoApprove(true)
                 //.authorizedGrantTypes("authorization_code", "refresh_token","password")
-                .authorizedGrantTypes("authorization_code", "password")
-                .scopes("openid");
+                .authorizedGrantTypes("authorization_code", "client_credentials", "refresh_token",
+                        "password", "implicit")
+                .scopes("all").accessTokenValiditySeconds(3600).refreshTokenValiditySeconds(2592000);
     }
 
 
